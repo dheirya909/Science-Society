@@ -557,3 +557,48 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
+
+/* Cursor Follow Backdrop */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: rgba(96, 165, 250, 0.1); /* Soft blue backdrop */
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s ease; /* Smooth follow effect */
+    z-index: -1; /* Ensure it stays behind all content */
+}
+
+/* Cursor Follow Backdrop */
+#cursor-backdrop {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.4), rgba(96, 165, 250, 0.1));
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interaction */
+    z-index: 10000; /* Ensure it's above everything */
+    transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background 0.3s;
+    filter: blur(20px); /* Soft blur for glow effect */
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.3); /* Glowing effect */
+    left: 0; /* Start at the top-left corner */
+    top: 0; /* Start at the top-left corner */
+    transform: scale(1);
+}
+
+/* Scale up the backdrop slightly when moving */
+#cursor-backdrop.active {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.6), rgba(96, 165, 250, 0.2));
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.4);
+    transform: scale(1.1); /* Slightly larger */
+}
+
+
+
+

@@ -58,7 +58,7 @@
             <h2 class="section-title">Current Projects</h2>
             <div class="section-grid">
                 <div class="card">
-                    <img src="/api/placeholder/400/300" alt="Robotics Project">
+                    <img src="robotic-arm.png" alt="Robotics Project">
                     <div class="card-content">
                         <h3>Robotics Team</h3>
                         <p>Building and programming robots for the upcoming Regional Robotics Competition.</p>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="/api/placeholder/400/300" alt="Environmental Study">
+                    <img src="save-the-world.png" alt="Environmental Study">
                     <div class="card-content">
                         <h3>Eco Warriors</h3>
                         <p>Studying local ecosystem and implementing recycling initiatives.</p>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="/api/placeholder/400/300" alt="Chemistry Lab">
+                    <img src="enzyme.png" alt="Chemistry Lab">
                     <div class="card-content">
                         <h3>Chemistry Lab</h3>
                         <p>Exploring renewable energy through chemical reactions.</p>
@@ -177,5 +177,29 @@
             </div>
         </div>
     </footer>
+    <div id="cursor-backdrop"></div>
+
+    <script>
+        const cursorBackdrop = document.getElementById('cursor-backdrop');
+    
+        document.addEventListener('mousemove', (e) => {
+            // Position the backdrop directly under the cursor
+            cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
+            cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+    
+            // Add 'active' class for dynamic effect
+            cursorBackdrop.classList.add('active');
+    
+            // Remove 'active' class after 150ms to trigger smooth scaling
+            setTimeout(() => {
+                cursorBackdrop.classList.remove('active');
+            }, 150);
+        });
+    </script>
+    
+    
+    
+    
+    
 </body>
 </html>
