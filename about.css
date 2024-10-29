@@ -1,0 +1,50 @@
+/* About Page Styles */
+
+.about {
+    margin-top: 4rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.about h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.about ul li {
+    background: rgba(96, 165, 250, 0.1);
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    transition: background 0.3s;
+}
+
+.about ul li:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}

@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBPS Science society</title>
-    <link rel="icon" href="logo.png" type="image/png">
-
+    <title>About Us - BBPS Science Society</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +20,6 @@
                 <a href="about.html">About Us</a>
                 <a href="events.html">Events</a>
                 <a href="members.html">Members</a>
-                
             </nav>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -30,38 +28,28 @@
     </header>
 
     <main class="main-content">
-        <!-- Announcement Banner -->
-        <div class="announcement">
-            <i class="fas fa-bullhorn"></i>
-            <div>
-                <strong>Science Society Registration Open!</strong>
-                <p>Register by November 1st to enroll in the science society</p>
-            </div>
-        </div>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-video-container">
-                <video class="hero-video" autoplay loop muted playsinline>
-                    <source src="https://cdnjs.cloudflare.com/ajax/libs/test-videos/1.0.0/science/science.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h2>Welcome to BBPS Science Society</h2>
-            <p>Discover the wonders of science through hands-on experiments, fascinating projects, and engaging discussions.</p>
-            <div class="cta-buttons">
-                <a href="#join" class="btn btn-primary">Join Now</a>
-                <a href="#events" class="btn btn-secondary">View Events</a>
-            </div>
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Welcome to the BBPS Science Society! Our mission is to make science fun and accessible to everyone, regardless of their background.</p>
+            <p>We believe that science is not just a subject but a way of understanding the world around us. Through hands-on experiments, engaging projects, and informative discussions, we strive to ignite a passion for science in all our members.</p>
+            <p>Our society is open to students of all grades, and we organize various events such as science fairs, workshops, and guest lectures. Join us to explore the wonders of science together!</p>
+            <h3>Our Goals:</h3>
+            <ul>
+                <li>Encourage curiosity and creativity in scientific exploration.</li>
+                <li>Provide opportunities for practical learning through experiments.</li>
+                <li>Foster a community of science enthusiasts.</li>
+                <li>Organize events that promote scientific knowledge and engagement.</li>
+            </ul>
+            <h3>Contact Us:</h3>
+            <p>If you have any questions or want to learn more about us, feel free to reach out at <strong>example@gmail.com</strong>.</p>
         </section>
-
-        
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <h3>BBPS Science society</h3>
+                <h3>BBPS Science Society</h3>
                 <p>Making science fun and accessible for everyone</p>
                 <p>Contact: example@gmail.com</p>
             </div>
@@ -78,14 +66,9 @@
         const cursorBackdrop = document.getElementById('cursor-backdrop');
     
         document.addEventListener('mousemove', (e) => {
-            // Position the backdrop directly under the cursor
             cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
             cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
-    
-            // Add 'active' class for dynamic effect
             cursorBackdrop.classList.add('active');
-    
-            // Remove 'active' class after 150ms to trigger smooth scaling
             setTimeout(() => {
                 cursorBackdrop.classList.remove('active');
             }, 150);
