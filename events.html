@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - BBPS Science Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-flask"></i>
+                <h1>BBPS Science Society</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="members.html">Members</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title">Our Events</h2>
+        <p class="section-description">Discover exciting scientific events, workshops, and competitions organized by BBPS Science Society.</p>
+        
+        <div class="events-container">
+          
+
+            <!-- Upcoming Events -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="/api/placeholder/800/400" alt="Science Exhibition">
+                    <div class="event-date-badge">
+                        <i class="far fa-calendar-alt"></i>
+                        Nov 15, 2024
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Annual Science Exhibition 2024</h3>
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>School Auditorium</span>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        Join us for our flagship annual science exhibition where students showcase their innovative projects and experiments. This year's theme is "Sustainable Future Through Science".
+                    </p>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn">Register Now</button>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Event Example -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="/api/placeholder/800/400" alt="Science Workshop">
+                    <div class="event-date-badge">
+                        <i class="far fa-calendar-alt"></i>
+                        Oct 5, 2024
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Robotics Workshop</h3>
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <i class="far fa-clock"></i>
+                            <span>2:00 PM - 5:00 PM</span>
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Computer Lab</span>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        A hands-on workshop where students learned about basic robotics, programming, and built their own simple robots using Arduino.
+                    </p>
+                    <div class="event-actions">
+                        <button class="btn btn-secondary">View Gallery</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <h2 class="section-title">Event Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-event">
+                    <div class="timeline-content">
+                        <h3>Science Quiz Competition</h3>
+                        <p>Test your scientific knowledge in our annual quiz competition.</p>
+                        <small>December 1, 2024</small>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <div class="timeline-content">
+                        <h3>Space Science Workshop</h3>
+                        <p>Learn about astronomy and space exploration.</p>
+                        <small>December 15, 2024</small>
+                    </div>
+                </div>
+                <!-- Add more timeline events as needed -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Registration Form -->
+    <div class="form-overlay"></div>
+    <div class="registration-form">
+        <div class="close-form">
+            <i class="fas fa-times"></i>
+        </div>
+        <h3>Event Registration</h3>
+        <form id="event-registration">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Class & Section</label>
+                <input type="text" id="class" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Registration</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BBPS Science Society</h3>
+                <p>Making science fun and accessible for everyone</p>
+                <p>Contact: example@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cursor-backdrop"></div>
+
+    <script>
+        // Cursor backdrop effect
+        const cursorBackdrop = document.getElementById('cursor-backdrop');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
+            cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+            
+            cursorBackdrop.classList.add('active');
+            
+            setTimeout(() => {
+                cursorBackdrop.classList.remove('active');
+            }, 150);
+        });
+
+        // Registration form handling
+        const registerBtns = document.querySelectorAll('.register-btn');
+        const formOverlay = document.querySelector('.form-overlay');
+        const registrationForm = document.querySelector('.registration-form');
+        const closeForm = document.querySelector('.close-form');
+
+        registerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                formOverlay.classList.add('active');
+                registrationForm.classList.add('active');
+            });
+        });
+
+        closeForm.addEventListener('click', () => {
+            formOverlay.classList.remove('active');
+            registrationForm.classList.remove('active');
+        });
+
+        // Timeline animation
+        const timelineEvents = document.querySelectorAll('.timeline-event');
+
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        timelineEvents.forEach(event => {
+            observer.observe(event);
+        });
+
+        // Filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Add filtering logic here
+            });
+        });
+    </script>
+</body>
