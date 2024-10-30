@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBPS Science society</title>
     <link rel="icon" href="/images/logo.png" type="image/png">
-
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -18,6 +17,7 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
+                <a href="aboutEvents.html">About events</a>
                 <a href="about.html">About Us</a>
                 <a href="events.html">Events</a>
                 <a href="members.html">Members</a>
@@ -34,8 +34,8 @@
         <div class="announcement">
             <i class="fas fa-bullhorn"></i>
             <div>
-                <strong>Science Society events starting soon!</strong>
-                <p>Stay Tuned to participate in the following!</p>
+                <strong> The Science Society wishes you a very happy diwali! 🕯️🎇🎆</strong>
+                <p>May this diwali light up your life with happiness.</p>
             </div>
         </div>
 
@@ -75,21 +75,50 @@
     <div id="cursor-backdrop"></div>
 
     <script>
-        const cursorBackdrop = document.getElementById('cursor-backdrop');
-    
-        document.addEventListener('mousemove', (e) => {
-            // Position the backdrop directly under the cursor
-            cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
-            cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
-    
-            // Add 'active' class for dynamic effect
-            cursorBackdrop.classList.add('active');
-    
-            // Remove 'active' class after 150ms to trigger smooth scaling
-            setTimeout(() => {
-                cursorBackdrop.classList.remove('active');
-            }, 150);
-        });
+       const cursorBackdrop = document.getElementById('cursor-backdrop');
+
+// Check if the device has touch capabilities
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Track whether the user is currently using the cursor
+let isUsingCursor = false;
+
+document.addEventListener('mousemove', (e) => {
+  isUsingCursor = true;
+
+  // Position the backdrop directly under the cursor
+  cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
+  cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+
+  // Add 'active' class for dynamic effect
+  cursorBackdrop.classList.add('active');
+
+  // Remove 'active' class after 150ms to trigger smooth scaling
+  setTimeout(() => {
+    cursorBackdrop.classList.remove('active');
+  }, 150);
+});
+
+document.addEventListener('touchstart', () => {
+  isUsingCursor = false;
+
+  // Hide or disable the cursor backdrop for touch interactions
+  cursorBackdrop.style.display = 'none';
+});
+
+document.addEventListener('touchend', () => {
+  // Show the cursor backdrop again after touch interactions
+  cursorBackdrop.style.display = 'block';
+});
+
+// Only show the cursor backdrop if the device has both touch and cursor inputs, and the user is currently using the cursor
+if (isTouchDevice && isUsingCursor) {
+  // Show and animate the cursor backdrop
+  cursorBackdrop.style.display = 'block';
+} else {
+  // Hide the cursor backdrop
+  cursorBackdrop.style.display = 'none';
+}
     </script>
 </body>
 </html>
