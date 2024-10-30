@@ -3,74 +3,66 @@ const members = [
         name: "Prakhar Dubey",
         role: "President",
         class: "Class 11-C",
-        description: "Leading the Science Society with innovative ideas and passionate dedication to scientific exploration.",
-        linkedin: "#",
-        email: "#",
-        image: "image.png",
+        description: "An exceptional orator and an AI developer, he has done internships with renowned companies like Microsoft and IBM. He is truly a role model to all his peers.",
+        linkedin: "https://www.linkedin.com/in/prakhar-dubey",
+        image: "/images/members/Prakhar.png",
     },
     {
         name: "Somya Gupta",
         role: "President",
         class: "Class 11-D",
-        description: "Leading the Science Society with innovative ideas and passionate dedication to scientific exploration.",
-        linkedin: "#",
-        email: "#",
-        image: "image.png",
+        description: "She is a creative, innovative and enthusiastic individual who aims to ignite a curiosity and inspire a love for science in everyone. ",
+        linkedin: "https://www.linkedin.com/in/somya-gupta-5a89a8334/",
+        image: "/images/logo.png",
     },
     {
         name: "Aarav Parashar",
         role: "Vice President",
         class: "Class 10-A",
-        description: "Supporting society initiatives and coordinating between different teams to achieve our goals.",
-        linkedin: "#",
-        email: "#",
-        image: "image copy.png",
+        description: "A dedicated member of the science society, with a passion for science and a commitment to inspiring peers, Aarav looks forward to leading exciting projects and initiatives.",
+        linkedin: "https://www.linkedin.com/in/aarav-parashar/",
+        image: "/images/members/aarav.png",
     },
     {
         name: "Naman Goel",
         role: "Vice President",
         class: "Class 11-D",
-        description: "VP, aka- kulfi man",
+        description: "Not Available This moment...",
         linkedin: "#",
-        email: "#",
-        image: "naman.mp4",
+        image: "/images/members/naman.png",
     },
     {
         name: "Palak",
         role: "Ideator",
         class: "Class 11-B",
-        description: "Bringing creative ideas and innovative solutions to our scientific projects and events.",
+        description: "she stands out as a passionate member of the science society. Her bright smile and eager attitude draw others in, making her a natural leader.",
         linkedin: "#",
-        email: "#",
-        image: "image.png",
+        image: "/images/logo.png",
     },
     {
         name: "Atharva Keswani",
         role: "Ideator",
         class: "Class 11-B",
-        description: "Bringing creative ideas and innovative solutions to our scientific projects and events.",
+        description: "With a knack for problem-solving and a curiosity that knows no bounds, he dives into every project with energy and excitement. ",
         linkedin: "#",
-        email: "#",
-        image: "image.png",
+        image: "/images/members/atharva.png",
     },
 
     {
         name: "Sakshi Jain",
         role: "IT Head",
         class: "Class 11-D",
-        description: "Bringing creative ideas and innovative solutions to our scientific projects and events.",
+        description: "Known for his enthusiasm and inventive spirit, he believes in the importance of inspiring the next generation of scientists and engineers.",
         linkedin: "#",
-        email: "#",
-        image: "image.png",
+        image: "/images/logo.png",
     },
     {
         name: "Vibhav",
         role: "IT Team",
         class: "Class 11-B",
-        description: "Bringing creative ideas and innovative solutions to our scientific projects and events.",
+        description: "Driven by a passion towards science, he is always armed with a notebook full of ideas, often sparking engaging discussions and ideas.",
         linkedin: "#",
-        email: "#",
-        image: "image.png",
+        image: "/images/logo.png",
     }
         
 ];
@@ -94,7 +86,6 @@ function createMemberCard(member) {
                     <p class="member-details">${member.description}</p>
                     <div class="member-social">
                         <a href="${member.linkedin}"><i class="fab fa-linkedin"></i></a>
-                        <a href="${member.email}"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
