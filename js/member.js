@@ -3,7 +3,7 @@ const members = [
         name: "Prakhar Dubey",
         role: "President",
         class: "Class 11-C",
-        description: "An exceptional orator and an AI developer, he has done internships with renowned companies like Microsoft and IBM. He is truly a role model to all his peers.",
+        description: "As founding science society president, he champions innovation with experience at Microsoft, IBM, and a passion for quantum computing.",
         linkedin: "https://www.linkedin.com/in/prakhar-dubey-5b3629276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         image: "/images/members/Prakhar.png",
     },
