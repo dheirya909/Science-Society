@@ -76,7 +76,7 @@ const members = [
         name: "Dheirya Kharbanda",
         role: "Website Developer",
         class: "Class 10-G",
-        description: "Fueled by a love of web technologies like HTML and CSS, he is one of the main developers of this website",
+        description: "Fueled by a love of web technologies like HTML and CSS, he is the main developer of this website",
         linkedin: "#",
         image: "/images/members/dheirya.png",
     },
@@ -86,7 +86,7 @@ const members = [
         class: "Class 10-F",
         description: "Fueled by a love of web technologies like JavaScript and TypeScript, he is one of the main developers of this website",
         linkedin: "#",
-        image: "/images/members/agam.png",
+        image: "/images/members/agam.jpg",
     }
         
 ];
