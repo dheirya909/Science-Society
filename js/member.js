@@ -49,11 +49,11 @@ const members = [
     },
 
     {
-        name: "Sakshi Jain",
+        name: "Saksham Jain",
         role: "IT Head",
         class: "Class 11-D",
         description: "Known for his enthusiasm and inventive spirit, he believes in the importance of inspiring the next generation of scientists and engineers.",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/saksham-jain-a247a6211/",
         image: "/images/members/Saksham.jpg",
     },
     {
