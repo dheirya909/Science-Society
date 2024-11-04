@@ -75,27 +75,27 @@
     <script>
        const cursorBackdrop = document.getElementById('cursor-backdrop');
 
-// Check if the device has touch capabilities
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    // Check if the device has touch capabilities
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-// Track whether the user is currently using the cursor
-let isUsingCursor = false;
+    // Track whether the user is currently using the cursor
+    let isUsingCursor = false;
 
-document.addEventListener('mousemove', (e) => {
-  isUsingCursor = true;
+    document.addEventListener('mousemove', (e) => {
+        isUsingCursor = true;
 
-  // Position the backdrop directly under the cursor
-  cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
-  cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+    // Position the backdrop directly under the cursor
+    cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
+    cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
 
-  // Add 'active' class for dynamic effect
-  cursorBackdrop.classList.add('active');
+    // Add 'active' class for dynamic effect
+    cursorBackdrop.classList.add('active');
 
-  // Remove 'active' class after 150ms to trigger smooth scaling
-  setTimeout(() => {
-    cursorBackdrop.classList.remove('active');
-  }, 150);
-});
+    // Remove 'active' class after 150ms to trigger smooth scaling
+    setTimeout(() => {
+        cursorBackdrop.classList.remove('active');
+    }, 150);
+    });
 
 document.addEventListener('touchstart', () => {
   isUsingCursor = false;
