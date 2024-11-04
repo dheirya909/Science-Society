@@ -30,7 +30,7 @@
 
     <main class="main-content">
         <h2 class="section-title">Our Events</h2>
-        <p class="section-description">Discover exciting scientific events, workshops, and competitions organized by BBPS Science Society.</p>
+        <p class="section-description" style="text-align: center;">Discover exciting scientific events, workshops, and competitions organized by BBPS Science Society.</p>
         
         <div class="events-container">
           
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="event-content">
-                    <h3 class="event-title">Annual Science Exhibition 2024</h3>
+                    <h3 class="event-title">APJ Science Exhibition 2024</h3>
                     <div class="event-details">
                         <div class="event-detail">
                             <i class="far fa-clock"></i>
@@ -57,41 +57,11 @@
                         </div>
                     </div>
                     <p class="event-description">
-                        Join us for our flagship annual science exhibition where students showcase their innovative projects and experiments. This year's theme is "Sustainable Future Through Science".
+                        Join us for our science exhibition where students showcase their innovative projects and experiments.
                     </p>
                     <div class="event-actions">
                         <button class="btn btn-primary register-btn">Media</button>
-                        <button class="btn btn-secondary" onclick="window.location.href = `aboutEvents.html?eventName=Science+Exhibition`">Learn more</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Past Event Example -->
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="/api/placeholder/800/400" alt="Science Workshop">
-                    <div class="event-date-badge">
-                        <i class="far fa-calendar-alt"></i>
-                        Oct 5, 2024
-                    </div>
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Robotics Workshop</h3>
-                    <div class="event-details">
-                        <div class="event-detail">
-                            <i class="far fa-clock"></i>
-                            <span>2:00 PM - 5:00 PM</span>
-                        </div>
-                        <div class="event-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Computer Lab</span>
-                        </div>
-                    </div>
-                    <p class="event-description">
-                        A hands-on workshop where students learned about basic robotics, programming, and built their own simple robots using Arduino.
-                    </p>
-                    <div class="event-actions">
-                        <button class="btn btn-secondary">View Gallery</button>
+                        <button class="btn btn-secondary" id="myBtn">Learn more</button>
                     </div>
                 </div>
             </div>
@@ -101,9 +71,9 @@
             <div class="timeline">
                 <div class="timeline-event">
                     <div class="timeline-content">
-                        <h3>Science Quiz Competition</h3>
-                        <p>Test your scientific knowledge in our annual quiz competition.</p>
-                        <small>December 1, 2024</small>
+                        <h3>Apj Science exhibition</h3>
+                        <p>Test your scientific knowledge with our science exhibition competition.</p>
+                        <small>September 26, 2024</small>
                     </div>
                 </div>
                 <div class="timeline-event">
@@ -118,29 +88,21 @@
         </div>
     </main>
 
-    <!-- Registration Form -->
-    <div class="form-overlay"></div>
-    <div class="registration-form">
-        <div class="close-form">
-            <i class="fas fa-times"></i>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <br>
+          <ul style="list-style: none;">
+            <h2>Winners!</h2>
+            <br>
+            <li>1st - Agro Viking Rover (Sourish Sarna, Prakhar Dubey)</li>
+            <li>2nd - Lorem </li>
+          </ul>
         </div>
-        <h3>Event Registration</h3>
-        <form id="event-registration">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="class">Class & Section</label>
-                <input type="text" id="class" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Registration</button>
-        </form>
-    </div>
+      
+      </div>
 
     <footer class="footer">
         <div class="footer-content">
@@ -158,6 +120,33 @@
     <div id="cursor-backdrop"></div>
 
     <script>
+
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
         // Cursor backdrop effect
         const cursorBackdrop = document.getElementById('cursor-backdrop');
         
