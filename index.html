@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    
     <header class="header">
         <div class="nav-container">
             <div class="logo">
@@ -21,7 +22,6 @@
                 <a href="about.html">About Us</a>
                 <a href="events.html">Events</a>
                 <a href="members.html">Members</a>
-                
             </nav>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -34,7 +34,7 @@
         <div class="announcement">
             <i class="fas fa-bullhorn"></i>
             <div>
-                <strong> The Science Society wishes you a very Happy Childrens Day!! ❤️🥳🥳</strong>
+                <strong>The Science Society wishes you a very Happy Childrens Day!! ❤️🥳🥳</strong>
                 <p>Every child is a different flower and all together they make this world a beautiful garden!</p>
             </div>
         </div>
@@ -54,7 +54,19 @@
             </div>
         </section>
 
-        
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <br>
+        <!-- Clickable image that links to the brochure -->
+        <a href="/Interschool Competition .png" target="_blank">
+            <img src="/images/comp.png" alt="Welcome" class="modal-image">
+        </a>
+        <button onclick="closeModal()">Got it!</button>
+    </div>
+</div>
+    
     </main>
 
     <!-- Footer -->
@@ -64,7 +76,7 @@
                 <h3>BBPS Science society</h3>
                 <p>Making science fun and accessible for everyone</p>
                 <p>Contact: example@gmail.com</p>
-                <p style="color: #1a2747;">Made By : Dheirya Kharbanda, Kanav Goel and AgamJot Singh Bindra</p>
+                <p style="color: #1a2747;">Made By: Dheirya Kharbanda, Kanav Goel, and AgamJot Singh Bindra</p>
             </div>
             <div class="footer-social">
                 <a href="https://www.instagram.com/science_society24/" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -73,51 +85,61 @@
     </footer>
     <div id="cursor-backdrop"></div>
 
+    <!-- Scripts -->
     <script>
-       const cursorBackdrop = document.getElementById('cursor-backdrop');
+        // Modal Functionality
+        const modal = document.getElementById("modal");
+        const closeBtn = document.querySelector(".close-btn");
 
-    // Check if the device has touch capabilities
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        // Show the modal after 2 seconds
+        setTimeout(() => {
+            modal.style.display = "block";
+        }, 2000);
 
-    // Track whether the user is currently using the cursor
-    let isUsingCursor = false;
+        // Close the modal when clicking the close button
+        closeBtn.onclick = closeModal;
 
-    document.addEventListener('mousemove', (e) => {
-        isUsingCursor = true;
+        function closeModal() {
+            modal.style.display = "none";
+        }
 
-    // Position the backdrop directly under the cursor
-    cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
-    cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+        // Close the modal if user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
 
-    // Add 'active' class for dynamic effect
-    cursorBackdrop.classList.add('active');
+        // Cursor Animation
+        const cursorBackdrop = document.getElementById('cursor-backdrop');
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        let isUsingCursor = false;
 
-    // Remove 'active' class after 150ms to trigger smooth scaling
-    setTimeout(() => {
-        cursorBackdrop.classList.remove('active');
-    }, 150);
-    });
+        document.addEventListener('mousemove', (e) => {
+            isUsingCursor = true;
+            cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
+            cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
+            cursorBackdrop.classList.add('active');
 
-document.addEventListener('touchstart', () => {
-  isUsingCursor = false;
+            setTimeout(() => {
+                cursorBackdrop.classList.remove('active');
+            }, 150);
+        });
 
-  // Hide or disable the cursor backdrop for touch interactions
-  cursorBackdrop.style.display = 'none';
-});
+        document.addEventListener('touchstart', () => {
+            isUsingCursor = false;
+            cursorBackdrop.style.display = 'none';
+        });
 
-document.addEventListener('touchend', () => {
-  // Show the cursor backdrop again after touch interactions
-  cursorBackdrop.style.display = 'block';
-});
+        document.addEventListener('touchend', () => {
+            cursorBackdrop.style.display = 'block';
+        });
 
-// Only show the cursor backdrop if the device has both touch and cursor inputs, and the user is currently using the cursor
-if (isTouchDevice && isUsingCursor) {
-  // Show and animate the cursor backdrop
-  cursorBackdrop.style.display = 'block';
-} else {
-  // Hide the cursor backdrop
-  cursorBackdrop.style.display = 'none';
-}
+        if (isTouchDevice && isUsingCursor) {
+            cursorBackdrop.style.display = 'block';
+        } else {
+            cursorBackdrop.style.display = 'none';
+        }
     </script>
 </body>
 </html>
