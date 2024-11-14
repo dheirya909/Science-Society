@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBPS Science Society</title>
+</head>
+<body>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    background-color: #0b1221;
+    position: relative;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #10182c;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Parallax Background */
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/Interschool\ Competition\ .png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* Ensures it stays behind the content */
+}
+
+/* Content Section */
+.main-content {
+    text-align: center;
+    padding-top: 150px; /* Adjust for fixed navbar height */
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #357ab8;
+}
+
+    </style>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">BBPS Science Society</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Members</a></li>
+        </ul>
+    </nav>
+
+    <!-- Parallax Background -->
+    <div class="parallax"></div>
+
+    <!-- Content Section -->
+    <div class="main-content">
+        <h1>Welcome to BBPS Science Society</h1>
+        <p>Discover the wonders of science through hands-on experiments, fascinating projects, and engaging discussions.</p>
+        <div class="buttons">
+            <button>Learn More</button>
+            <button>View Events</button>
+        </div>
+    </div>
+</body>
+</html>

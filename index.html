@@ -6,6 +6,7 @@
     <title>BBPS Science society</title>
     <link rel="icon" href="/images/logo.png" type="image/png">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,28 +14,29 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <img src="/images/logo.png" alt="logo" width="50px" height="auto" style="border-radius: 100px;">
-                <h1>BBPS Science Society</h1>
+                <img src="/images/logo.png" alt="logo" width="50" height="50" style="border-radius: 100px;">
+                <h1 class="firsttext">BBPS Science Society</h1>
+                <h1 class="secondtext">BBPS</h1>
             </div>
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
-                <a href="error.html">About events</a>
                 <a href="about.html">About Us</a>
                 <a href="events.html">Events</a>
                 <a href="members.html">Members</a>
             </nav>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
+    
 
     <main class="main-content">
         <!-- Announcement Banner -->
         <div class="announcement">
             <i class="fas fa-bullhorn"></i>
             <div>
-                <strong>The Science Society wishes you a very Happy Childrens Day!! ❤️🥳🥳</strong>
+                <strong>The Science Society wishes you a very Happy Childrens Day!!</strong>
                 <p>Every child is a different flower and all together they make this world a beautiful garden!</p>
             </div>
         </div>
@@ -63,7 +65,7 @@
         <a href="/Interschool Competition .png" target="_blank">
             <img src="/images/comp.png" alt="Welcome" class="modal-image">
         </a>
-        <button onclick="closeModal()">Got it!</button>
+        <a href="/Interschool Competition .png" class="btn btn-secondary" target="_blank">Learn More!</a>
     </div>
 </div>
     
@@ -87,6 +89,17 @@
 
     <!-- Scripts -->
     <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('open');
+        });
+    });
+
         // Modal Functionality
         const modal = document.getElementById("modal");
         const closeBtn = document.querySelector(".close-btn");

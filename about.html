@@ -13,16 +13,17 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <img src="/images/logo.png" alt="logo" width="50px" height="auto" style="border-radius: 100px;">
-                <h1>BBPS Science Society</h1>
+                <img src="/images/logo.png" alt="logo" width="50" height="50" style="border-radius: 100px;">
+                <h1 class="firsttext">BBPS Science Society</h1>
+                <h1 class="secondtext">BBPS</h1>
             </div>
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="events.html">Events</a>
                 <a href="members.html">Members</a>
             </nav>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -51,10 +52,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <h3>BBPS Science society</h3>
+                <h3>BBPS Science Society</h3>
                 <p>Making science fun and accessible for everyone</p>
                 <p>Contact: example@gmail.com</p>
-                <p style="color: #1a2747;">Made By : Dheirya Kharbanda, Kanav Goel and AgamJot Singh Bindra</p>
+                <p style="color: #1a2747;">Made By : Dheirya Kharbanda, Kanav Goel and Agamjot Singh Bindra</p>
             </div>
             <div class="footer-social">
                 <a href="https://www.instagram.com/science_society24/" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -65,6 +66,18 @@
     <div id="cursor-backdrop"></div>
 
     <script>
+
+        
+document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('open');
+        });
+    });
+
         const cursorBackdrop = document.getElementById('cursor-backdrop');
     
         document.addEventListener('mousemove', (e) => {

@@ -1,0 +1,236 @@
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--background-color);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+    transform: scale(1.05);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #4d4d4d;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ce3577;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #0ca2bc;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #087e93;
+}
+
+/* Announcement Banner */
+.announcement {
+    background: var(--card-bg);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.announcement:hover {
+    transform: translateX(5px);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-md);
+}
+
+.announcement i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Hero Section with Video */
+.hero {
+    position: relative;
+    color: var(--text-color);
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Adjust modal content for tablet screens */
+    .modal-content {
+      width: 90%;
+      max-width: 450px;
+    }
+  
+    /* Adjust hero section */
+    .hero {
+      padding: 3rem 1.5rem;
+    }
+    
+    .hero h2 {
+      font-size: 2.2rem;
+    }
+  
+    .hero p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Modal adjustments for mobile screens */
+    .modal-content {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .modal-image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .close-btn {
+      font-size: 18px;
+    }
+  
+    /* Button adjustments */
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+    }
+  
+    /* Announcement banner adjustments */
+    .announcement {
+      margin-top: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: left;
+      font-size: xx-small;
+    }
+    
+    .announcement i {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+      padding: 2rem 1rem;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Further optimize modal on smaller devices */
+    .modal-content {
+      width: 95%;
+      max-width: 400px;
+    }
+  
+    .close-btn {
+      font-size: 16px;
+      top: 5px;
+      right: 10px;
+    }
+  
+    /* Button adjustments for small screens */
+    button {
+      padding: 10px;
+    }
+  
+    /* Hero section text size adjustments */
+    .hero h2 {
+      font-size: 1.8rem;
+    }
+  
+    .hero p {
+      font-size: 0.9rem;
+    }
+  }
+  
