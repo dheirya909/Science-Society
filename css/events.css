@@ -247,6 +247,16 @@
 .close-btn:hover {
   color: #ce3577;
 }
+
+.modal-btn {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 11px;
+  font-weight: 600;
+}
   
   /* The actual content */
   .content {
