@@ -65,6 +65,14 @@ const members = [
         image: "/images/logo.png",
     },
     {
+        name: "Krityanidhi Chawla",
+        role: "editorial",
+        class: "Class 11-D",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex distinctio quae doloremque eligendi mollitia nostrum iure enim numquam, deserunt commodi!",
+        linkedin: "#",
+        image: "/images/logo.png",
+    },
+    {
         name: "Kanav goel",
         role: "Website Developer",
         class: "Class 11-D",
@@ -88,6 +96,7 @@ const members = [
         linkedin: "#",
         image: "/images/members/agam.jpg",
     }
+    
         
 ];
 
