@@ -68,9 +68,9 @@ const members = [
         name: "Krityanidhi Chawla",
         role: "editorial",
         class: "Class 11-D",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex distinctio quae doloremque eligendi mollitia nostrum iure enim numquam, deserunt commodi!",
+        description: "She blends her love for learning with creativity in writing, art, and innovation, bringing fresh ideas and enthusiasm to projects with the goal of inspiring others and making a lasting impact.",
         linkedin: "#",
-        image: "/images/logo.png",
+        image: "/images/members/krityanidhi.png",
     },
     {
         name: "Kanav goel",
