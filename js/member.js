@@ -74,7 +74,7 @@ const members = [
     },
     {
         name: "Kanav goel",
-        role: "Website Developer",
+        role: "Main Developer",
         class: "Class 11-D",
         description: "Driven by a passion towards science, he is always armed with a notebook full of ideas, often sparking engaging discussions and ideas. ",
         linkedin: "#",
@@ -82,7 +82,7 @@ const members = [
     },
     {
         name: "Dheirya Kharbanda",
-        role: "Website Developer",
+        role: "Main Developer",
         class: "Class 10-G",
         description: "Driven by a deep passion for web technologies such as HTML and CSS, he leads the development of this website with meticulous attention to detail and technical expertise.",
         linkedin: "#",
@@ -90,7 +90,7 @@ const members = [
     },
     {
         name: "AgamJot Bindra",
-        role: "Website Developer",
+        role: "Secondary Developer",
         class: "Class 10-F",
         description: "Fueled by a love of web technologies like JavaScript and TypeScript, he is one of the main developers of this website",
         linkedin: "#",
