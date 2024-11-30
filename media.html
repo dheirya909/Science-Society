@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            margin-top: 5rem;
+        }
+
+        .main h1 {
+            margin-left: 20px;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap; /* Prevents wrapping of images */
+            scroll-snap-type: x mandatory; /* Adds snapping effect */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .scroll-container img {
+            max-height: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            scroll-snap-align: start; /* Aligns images to the viewport during scroll */
+            border: 1px solid white;
+        }
+
+        /* Optional: Hide scrollbar for a cleaner look */
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/navbar.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+    <script src="/js/navbar.js"></script>
+
+
+    <div class="main">
+
+        <br>
+        <br>
+        <h1>(Side Scroll)</h1>
+        <br>
+        <br>
+
+        <h1>Investiture ceremony</h1>
+        <br>
+    <div class="scroll-container">
+        <img src="/images/investiture/invest1.jpg" alt="Placeholder Image 1">
+        <img src="/images/investiture/invest2.jpg" alt="Placeholder Image 2">
+        <img src="/images/investiture/invest3.jpg" alt="Placeholder Image 3">
+    </div>
+
+    <br>
+    <br>
+
+    <h1>Abdul Kalam Memorial Science exhibition</h1>
+        <br>
+    <div class="scroll-container">
+        <img src="/images/apj/apj1.jpg" alt="Placeholder Image 1">
+        <img src="/images/apj/apj2.jpg" alt="Placeholder Image 2">
+        <img src="/images/apj/apj3.jpg" alt="Placeholder Image 3">
+        <img src="/images/apj/apj4.jpg" alt="Placeholder Image 4">
+        <img src="/images/apj/apj5.jpg" alt="Placeholder Image 5">
+        <img src="/images/apj/apj6.jpg" alt="Placeholder Image 6">
+        <img src="/images/apj/apj7.jpg" alt="Placeholder Image 7">
+    </div>
+    </div>
+    <br>
+
+</body>
+</html>
