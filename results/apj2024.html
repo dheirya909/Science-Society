@@ -6,6 +6,7 @@
     <title>BBPS Science Society</title>
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
     <style>
         /* General Reset */
@@ -88,7 +89,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", async () => {
-        const filePath = `ScienceExhibition.xlsx`;
+        const filePath = `/results/ScienceExhibition.xlsx`;
 
         try {
             const response = await fetch(filePath);
