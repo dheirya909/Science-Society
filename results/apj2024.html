@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBPS Science Society</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
@@ -61,6 +61,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/css/styles.css">
 <body>
 
 <header class="header">
@@ -89,7 +90,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", async () => {
-        const filePath = `/results/ScienceExhibition.xlsx`;
+        const filePath = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRya2sTGeYOCjCM0uwXmGcQkxFPXR1HrnFlDSzZZXdicpYjTk9akAUDA_s_MV-j9w/pubhtml`;
 
         try {
             const response = await fetch(filePath);
@@ -112,7 +113,7 @@
             const headings = filteredColumns[0];
             const rows = filteredColumns.slice(1);
 
-            const positionIndex = headings.findIndex(heading => heading.toLowerCase() === "position");
+            const positionIndex = headings.findIndex(heading => typeof heading === "string" && heading.toLowerCase() === "position");
             const winners = rows.filter(row => row[positionIndex]);
             const participants = rows.filter(row => !row[positionIndex]);
 
@@ -125,10 +126,10 @@
                 const table = document.createElement("table");
                 const thead = document.createElement("thead");
                 const trHead = document.createElement("tr");
-                table.style = 'border="1" style="border-collapse: collapse; text-align: left;"'
 
+                // Skip the first column while creating table headings
                 headings.forEach((heading, index) => {
-                    if (excludePosition && index === positionIndex) return;
+                    if (index === 0 || (excludePosition && index === positionIndex)) return;
                     const th = document.createElement("th");
                     th.textContent = heading;
                     trHead.appendChild(th);
@@ -140,7 +141,7 @@
                 rows.forEach(row => {
                     const tr = document.createElement("tr");
                     row.forEach((cell, index) => {
-                        if (excludePosition && index === positionIndex) return;
+                        if (index === 0 || (excludePosition && index === positionIndex)) return;
                         const td = document.createElement("td");
                         td.textContent = cell || "-";
                         tr.appendChild(td);
