@@ -10,19 +10,6 @@
 </head>
     <style>
         /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
         .container {
             width: 100%;
             max-width: 1200px;
@@ -64,34 +51,115 @@
     <link rel="stylesheet" href="/css/styles.css">
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="/images/logo.png" alt="logo" width="50" height="50" style="border-radius: 100px;">
-            <h1 class="firsttext">BBPS Science Society</h1>
-            <h1 class="secondtext">BBPS</h1>
-        </div>
-        <nav class="nav-links" id="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/about.html">About Us</a>
-            <a href="/events.html">Events</a>
-            <a href="/members.html">Members</a>
-        </nav>
-        <div class="mobile-menu-btn" id="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
+    <div id="navbar">
     </div>
-</header>
+    <script src="/js/navbar.js"></script> 
 
 <main class="main-content">
     <div id="winners-table" class="table-container"></div>
     <div id="participants-table" class="table-container"></div>
 </main>
 
-<iframe embed='./ScienceExhibition.xlsx'>
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const filePath = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRya2sTGeYOCjCM0uwXmGcQkxFPXR1HrnFlDSzZZXdicpYjTk9akAUDA_s_MV-j9w/pubhtml`;
 
-    <div id="footer"></div>
-   <script src="/js/footer.js"></script>
+        try {
+            const response = await fetch(filePath);
+            const arrayBuffer = await response.arrayBuffer();
+            const workbook = XLSX.read(arrayBuffer, { type: "array" });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const data = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null });
+
+            // Filter out rows that are completely empty or contain only whitespace cells
+            const filteredRows = data.filter(row => 
+                row.some(cell => cell !== null && cell !== "" && (typeof cell !== 'string' || cell.trim() !== ""))
+            );
+
+            // Slice only the first 42 rows (excluding the header)
+            const first42Rows = filteredRows.slice(0, 43); // Including the header row
+
+            // Find the number of columns and check if any column has data
+            const columnCount = Math.max(...first42Rows.map(row => row.length));
+            const columnHasData = Array.from({ length: columnCount }, (_, colIndex) =>
+                first42Rows.some(row => row[colIndex] !== null && row[colIndex] !== "")
+            );
+
+            // Filter out columns that don't have any data
+            const filteredColumns = first42Rows.map(row =>
+                row.filter((_, colIndex) => columnHasData[colIndex])
+            );
+
+            // Extract the headings and rows
+            const headings = filteredColumns[0];
+            const rows = filteredColumns.slice(1);
+
+            // Find the column index for "Position"
+            const positionIndex = headings.findIndex(heading => typeof heading === "string" && heading.toLowerCase() === "position");
+            const winners = rows.filter(row => row[positionIndex]);
+            const participants = rows.filter(row => !row[positionIndex]);
+
+            // Function to create the table
+            const createTable = (tableTitle, headings, rows, excludePosition = false) => {
+                const container = document.createElement("div");
+                const title = document.createElement("h2");
+                title.textContent = tableTitle;
+                container.appendChild(title);
+
+                const table = document.createElement("table");
+                const thead = document.createElement("thead");
+                const trHead = document.createElement("tr");
+
+                // Skip the first column while creating table headings
+                headings.forEach((heading, index) => {
+                    if (index === 0 || (excludePosition && index === positionIndex)) return;
+                    const th = document.createElement("th");
+                    th.textContent = heading;
+                    trHead.appendChild(th);
+                });
+                thead.appendChild(trHead);
+                table.appendChild(thead);
+
+                const tbody = document.createElement("tbody");
+                rows.forEach(row => {
+                    const tr = document.createElement("tr");
+
+                    let rowHasData = false;  // Flag to check if the row has any data
+                    row.forEach((cell, index) => {
+                        if (index === 0 || (excludePosition && index === positionIndex)) return;
+                        const td = document.createElement("td");
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                        rowHasData = true;  // Set the flag to true if there's any non-empty cell
+                    });
+
+                    // Only append the row if it contains data
+                    if (rowHasData) {
+                        tbody.appendChild(tr);
+                    } else {
+                        tbody.appendChild(document.createElement('br'));
+                    }
+                });
+                table.appendChild(tbody);
+
+                container.appendChild(table);
+                return container;
+            };
+
+            // Create tables for winners and participants
+            const winnersTable = createTable("Winners", headings, winners.slice(0, 42));
+            const participantsTable = createTable("Participants", headings, participants.slice(0, 42), true);
+
+            // Append tables to the DOM
+            document.getElementById("winners-table").appendChild(winnersTable);
+            document.getElementById("participants-table").appendChild(participantsTable);
+        } catch (error) {
+            console.error("Error loading Excel file:", error);
+            document.querySelector(".main-content").innerHTML = "<p>Unable to load event data. Please check if the file exists or try again later.</p>";
+        }
+    });
+</script>
 
 </body>
 </html>

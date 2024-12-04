@@ -36,15 +36,13 @@ const members = [
         role: "Ideator",
         class: "Class 11-B",
         description: "she stands out as a passionate member of the science society. Her bright smile and eager attitude draw others in, making her a natural leader.",
-        linkedin: "#",
         image: "/images/members/palak.png",
     },
     {
         name: "Atharva Keswani",
         role: "Ideator",
-        class: "Class 11-B",
+        class: "Class 10-G",
         description: "With a knack for problem-solving and a curiosity that knows no bounds, he dives into every project with energy and excitement. ",
-        linkedin: "#",
         image: "/images/members/atharva.png",
     },
 
@@ -61,7 +59,6 @@ const members = [
         role: "IT Team",
         class: "Class 11-B",
         description: "Driven by a passion towards science, he is always armed with a notebook full of ideas, often sparking engaging discussions and ideas.",
-        linkedin: "#",
         image: "/images/logo.png",
     },
     {
@@ -69,7 +66,6 @@ const members = [
         role: "editorial",
         class: "Class 11-D",
         description: "She blends her love for learning with creativity in writing, art, and innovation, bringing fresh ideas and enthusiasm to projects with the goal of inspiring others and making a lasting impact.",
-        linkedin: "#",
         image: "/images/members/krityanidhi.png",
     },
     {
@@ -77,23 +73,21 @@ const members = [
         role: "Main Developer",
         class: "Class 11-D",
         description: "Driven by a passion towards science, he is always armed with a notebook full of ideas, often sparking engaging discussions and ideas. ",
-        linkedin: "#",
         image: "/images/members/kanav.jpg",
     },
     {
         name: "Dheirya Kharbanda",
         role: "Main Developer",
         class: "Class 10-G",
+        linkedin: "https://in.linkedin.com/in/dheirya-kharbanda-733b4732b",
         description: "Driven by a deep passion for web technologies such as HTML and CSS, he leads the development of this website with meticulous attention to detail and technical expertise.",
-        linkedin: "#",
         image: "/images/members/dheirya.png",
     },
     {
-        name: "AgamJot Bindra",
-        role: "Secondary Developer",
+        name: "Agamjot Bindra",
+        role: "Developer",
         class: "Class 10-F",
         description: "Fueled by a love of web technologies like JavaScript and TypeScript, he is one of the main developers of this website",
-        linkedin: "#",
         image: "/images/members/agam.jpg",
     }
     
@@ -118,7 +112,7 @@ function createMemberCard(member) {
                     <div class="member-role">${member.role}</div>
                     <p class="member-details">${member.description}</p>
                     <div class="member-social">
-                        <a href="${member.linkedin}"><i class="fab fa-linkedin"></i></a>
+                        ${member.linkedin ? `<a href="${member.linkedin}"><i class="fab fa-linkedin"></i></a>` : '<br>'}
                     </div>
                 </div>
             </div>
