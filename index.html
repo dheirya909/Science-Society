@@ -1,11 +1,4 @@
-<!--
-______________________________  _________   _________      .__                               _________             .__        __          
-\______   \______   \______   \/   _____/  /   _____/ ____ |__| ____   ____   ____  ____    /   _____/ ____   ____ |__| _____/  |_ ___.__.
- |    |  _/|    |  _/|     ___/\_____  \   \_____  \_/ ___\|  |/ __ \ /    \_/ ___\/ __ \   \_____  \ /  _ \_/ ___\|  |/ __ \   __<   |  |
- |    |   \|    |   \|    |    /        \  /        \  \___|  \  ___/|   |  \  \__\  ___/   /        (  <_> )  \___|  \  ___/|  |  \___  |
- |______  /|______  /|____|   /_______  / /_______  /\___  >__|\___  >___|  /\___  >___  > /_______  /\____/ \___  >__|\___  >__|  / ____|
-        \/        \/                  \/          \/     \/        \/     \/     \/    \/          \/            \/        \/      \/     
--->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,18 +26,14 @@ ______________________________  _________   _________      .__                  
             </div>
         </div>
 
-        <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-video-container">
-                <video class="hero-video" autoplay loop muted playsinline>
-                    <source src="https://cdnjs.cloudflare.com/ajax/libs/test-videos/1.0.0/science/science.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h2>Welcome to BBPS Science Society</h2>
-            <p>Discover the wonders of science through hands-on experiments, fascinating projects, and engaging discussions.</p>
-            <div class="cta-buttons">
-                <a href="/about.html" class="btn btn-primary">learn more</a>
-                <a href="/events.html" class="btn btn-secondary">View Events</a>
+            <div class="hero-content">
+                <h2>BBPS Science Society</h2>
+                <p>Embark on a journey of scientific discovery, innovation, and exploration. Unleash your curiosity and transform the world through knowledge.</p>
+                <div class="cta-buttons">
+                    <a href="/about.html" class="btn btn-primary">Discover More</a>
+                    <a href="/events.html" class="btn btn-secondary">Upcoming Events</a>
+                </div>
             </div>
         </section>
 
@@ -77,7 +66,7 @@ ______________________________  _________   _________      .__                  
         // Show the modal after 2 seconds
         setTimeout(() => {
             modal.style.display = "block";
-        }, 2000);
+        }, 5000);
 
         // Close the modal when clicking the close button
         closeBtn.onclick = closeModal;
@@ -93,36 +82,6 @@ ______________________________  _________   _________      .__                  
             }
         };
 
-        // Cursor Animation
-        const cursorBackdrop = document.getElementById('cursor-backdrop');
-        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        let isUsingCursor = false;
-
-        document.addEventListener('mousemove', (e) => {
-            isUsingCursor = true;
-            cursorBackdrop.style.left = `${e.clientX - cursorBackdrop.offsetWidth / 2}px`;
-            cursorBackdrop.style.top = `${e.clientY - cursorBackdrop.offsetHeight / 2}px`;
-            cursorBackdrop.classList.add('active');
-
-            setTimeout(() => {
-                cursorBackdrop.classList.remove('active');
-            }, 150);
-        });
-
-        document.addEventListener('touchstart', () => {
-            isUsingCursor = false;
-            cursorBackdrop.style.display = 'none';
-        });
-
-        document.addEventListener('touchend', () => {
-            cursorBackdrop.style.display = 'block';
-        });
-
-        if (isTouchDevice && isUsingCursor) {
-            cursorBackdrop.style.display = 'block';
-        } else {
-            cursorBackdrop.style.display = 'none';
-        }
     </script>
 </body>
 </html>

@@ -31,4 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
         mobileMenuBtn.classList.toggle('open');
     });
+    
+
 });
+
