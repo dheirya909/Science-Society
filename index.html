@@ -1,31 +1,21 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBPS Science society</title>
+    <title>BBPS Science Society</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    
     <div id="navbar"></div>
     <script src="/js/navbar.js"></script>
 
-    <main class="main-content">
-        <!-- Announcement Banner -->
-        <div class="announcement">
-            <i class="fas fa-bullhorn"></i>
-            <div>
-                <strong>INNOVERSE 1.0 REGISTRATIONS STARTING SOON!</strong>
-                <p>Don't miss out on this amazing opportunity!</p>
-            </div>
-        </div>
+    <div id="notification-container"></div>
 
+    <main class="main-content">
         <section class="hero">
             <div class="hero-content">
                 <h2>BBPS Science Society</h2>
@@ -36,52 +26,52 @@
                 </div>
             </div>
         </section>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <br>
-        <!-- Clickable image that links to the brochure -->
-        <a href="/images/eventsPage/innoverse/INNOVERSE 1.0.pdf" target="_blank">
-            <img src="/images/eventsPage/innoverse/innoverse.png" alt="Welcome" class="modal-image">
-        </a>
-        <a href="/images/eventsPage/innoverse/INNOVERSE 1.0.pdf" class="btn btn-secondary" target="_blank">Learn More!</a>
-    </div>
-</div>
-    
     </main>
 
-   <div id="footer"></div>
-   <script src="/js/footer.js"></script>
+    <div id="footer"></div>
+    <script src="/js/footer.js"></script>
 
-    <!-- Scripts -->
     <script>
+        // Notification System
+        function createNotification(type, message) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
 
+            const icons = {
+                'success': 'fa-check-circle',
+                'info': 'fa-info-circle',
+                'warning': 'fa-exclamation-triangle',
+                'error': 'fa-times-circle'
+            };
 
-        // Modal Functionality
-        const modal = document.getElementById("modal");
-        const closeBtn = document.querySelector(".close-btn");
+            notification.innerHTML = `
+                <div class="notification-icon">
+                    <i class="fas ${icons[type] || 'fa-bell'}"></i>
+                </div>
+                <div class="notification-content">
+                    <strong>${type.charAt(0).toUpperCase() + type.slice(1)}</strong>
+                    <p>${message}</p>
+                </div>
+                <button class="notification-close">&times;</button>
+            `;
 
-        // Show the modal after 2 seconds
-        setTimeout(() => {
-            modal.style.display = "block";
-        }, 5000);
+            const closeBtn = notification.querySelector('.notification-close');
+            closeBtn.addEventListener('click', () => {
+                notification.style.animation = 'slideOut 0.5s ease';
+                setTimeout(() => container.removeChild(notification), 500);
+            });
 
-        // Close the modal when clicking the close button
-        closeBtn.onclick = closeModal;
+            container.appendChild(notification);
 
-        function closeModal() {
-            modal.style.display = "none";
+            
         }
 
-        // Close the modal if user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        };
-
+        // Sample notifications
+        document.addEventListener('DOMContentLoaded', () => {
+            createNotification('info', 'INNOVERSE 1.0 Registrations Opening Soon!');
+            
+        });
     </script>
 </body>
 </html>
